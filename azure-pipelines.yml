@@ -12,8 +12,8 @@ parameters:
       - prod
 
 pool:
-  'sc portal qa-and-up'
-
+  sc portal qa-and-up
+  
 steps:
 - task: CopyFilesOverSSH@0
   inputs:
