@@ -11,3 +11,12 @@ steps:
     contents: 'SampleWebApp.war'
     targetFolder: '/home/vadmin/'
     readyTimeout: '80000'
+
+- task: ms-vscs-rm.vss-services-ansible.ansible-task.Ansible@0
+  displayName: 'Run playbook'
+  inputs:
+    playbookRootRemoteMachine: 'templates/ansible_was_playbook.yaml'
+    playbookPathLinkedArtifactOnRemoteMachine: templates
+    playbookPathOnAgentMachine: 'templates/ansible_was_playbook.yaml'
+    inventoriesAgentMachine: hostList
+    inventoryHostListAgentMachine: 'opcgg015900011.service.gocloud.gov.on.ca'
