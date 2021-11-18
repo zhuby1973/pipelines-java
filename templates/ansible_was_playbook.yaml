@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Configure Jar File
+      shell: |
+        /app/IBM/WebSphere/AppServer/profiles/AppSrv01/bin/wsadmin.sh -conntype none -lang jython -c "AdminApp.install('/home/vadmin/SampleWebApp.war', ['-appname', 'PlantsByWebSphere888', '-usedefaultbindings', '-server', 'server1'])"
