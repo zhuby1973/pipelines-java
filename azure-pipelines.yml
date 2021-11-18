@@ -1,19 +1,9 @@
 trigger: 
 - master
 
-
-parameters:
-  - name: environment
-    default: dev
-    values:
-      - dev
-      - qa 
-      - uat
-      - prod
-
 pool:
   sc portal qa-and-up
-  
+
 steps:
 - task: CopyFilesOverSSH@0
   inputs:
